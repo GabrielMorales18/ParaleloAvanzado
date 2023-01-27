@@ -1,6 +1,6 @@
-/*
-Practica 1 - 26/01/23
 
+//Practica 1 - 26/01/23
+/*
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
 
@@ -30,7 +30,7 @@ int main()
 
 //warp - 32 threads 
 
-Practica 2 - 26/01/23
+//Practica 2 - 26/01/23
 
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
