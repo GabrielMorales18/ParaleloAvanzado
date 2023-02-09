@@ -71,17 +71,18 @@ inline void gpuAssert(cudaError_t code, const char* file, int line, bool abort =
     }
 }
 
-__global__ void matrixMultiplication(int* a, int* b, int* c, int s) {
-    int row = threadIdx.x / s;
-    int col = threadIdx.x - row * s;
+__global__ void matrixMultiplication(int* a, int* b, int* c, int side) {
+    int row = threadIdx.x / side;
+    int col = threadIdx.x - row * side;
 
-    int suma = 0;
-    if (row < s && col < s) {
-        for (int i = 0; i < s; i++) {
-            suma += a[row * s + i] * b[i * s + col];
+    int acumulado = 0;
+    
+    if (row < side && col < side) {
+        for (int i = 0; i < side; i++) {
+            acumulado += a[row * side + i] * b[i * side + col];
         }
     }
-    c[threadIdx.x] = suma;
+    c[threadIdx.x] = acumulado;
 }
 
 int main() {
