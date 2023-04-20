@@ -40,9 +40,9 @@ __global__ void soa(structArray* data, structArray* result, const int size) {
 
 int main() {
 
-    //AOS
+    //SOA
     /*
-    printf("AOS\n");
+    printf("SOA\n");
 
     int array_size = LEN;
     int byte_size = sizeof(structArray);
@@ -89,7 +89,7 @@ int main() {
     return 0;
     */
 
-    //SOA
+    //AOS
     
     printf("AOS\n");
 
